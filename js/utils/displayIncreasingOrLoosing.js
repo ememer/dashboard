@@ -1,10 +1,10 @@
 export const displayIncreasingOrLoosing = (
-  input,
-  limit,
+  currentState,
+  prevState,
   target,
   mainClassName
 ) => {
-  return input >= limit
+  return currentState > prevState
     ? target.classList?.add(`${mainClassName}`, "social-up")
     : target.classList?.add(`${mainClassName}`, "social-down");
 };

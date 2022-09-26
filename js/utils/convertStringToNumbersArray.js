@@ -20,6 +20,6 @@ export const convertStringToNumbersArray = (numbers) => {
     firstIndexNumb++;
   
   
-    return { numbers, arrayOfIndexes, numbersArray };
+    return  numbersArray;
   };
   

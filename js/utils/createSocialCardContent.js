@@ -1,7 +1,10 @@
 import { displayIncreasingOrLoosing } from "./displayIncreasingOrLoosing.js";
-import { generateRandomNumbers } from "./generateRandomNumberFields.js";
 
-export const socialCardContent = (content, response) => {
+export const socialCardContent = (content, response) => {   
+  const prevState = (response[content.id + 3] ?? 0);
+  const currentState = (response[content.id - 1] ?? 0);
+  const responseDifference = currentState - prevState
+
   //Generating number for followers
   const toDayDate = new Date().getDate();
   const randomNumber = Math.floor(Math.random() * (10000 - 2144) + 2144);
@@ -24,8 +27,7 @@ export const socialCardContent = (content, response) => {
     response[content.id - 1] ?? 0
   //Daily followers sub qut
   subtitleCard.innerText = content.subtitle.toUpperCase();
-  subCounter.innerText =
-    response[content.id + 5 - 1] ?? Math.floor(randomNumberFromDate);
+  subCounter.innerText = responseDifference ?? 0;
   //Containers and elements classList
   cardContainer.classList.add("social-card", `${content.socialName}`);
   cardContainer.id = content.id;
@@ -34,8 +36,8 @@ export const socialCardContent = (content, response) => {
   subtitleCard.classList.add("social-subtitle");
   //Randomize color of new or lost subs
   displayIncreasingOrLoosing(
-    randomNumberFromDate,
-    311,
+    currentState,
+    prevState,
     subCounter,
     "social-counter"
   );
