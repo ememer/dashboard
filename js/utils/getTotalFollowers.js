@@ -1,9 +1,8 @@
-export const getTotalFollowers = async (dashboardData) => {
+export const getTotalFollowers = async (followersArray) => {
   const headerTitle = document.getElementsByClassName("header-title")[0];
-  const currentFollowers = await document.querySelectorAll("[class^=social-qty]");
-  const followersArr = [...currentFollowers];
+  const currentFollowersArray = followersArray.filter((number, index)=> index < 4 ? number : null ) ?? []
   let followers = 0;
-  followersArr.map((elem) => (followers += +elem.outerText));
+  currentFollowersArray.map((number) => (followers += number));
   headerTitle.lastElementChild.innerText = `Total followers: ${followers
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;

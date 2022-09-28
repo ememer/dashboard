@@ -5,7 +5,6 @@ export const dashboardData = [
     socialName: "facebook",
     icon: "../../images/icon-facebook.svg",
     user: "@user123",
-    followers: 2332,
     subtitle: "Followers",
   },
   {
@@ -14,7 +13,6 @@ export const dashboardData = [
     socialName: "twitter",
     icon: "../../images/icon-twitter.svg",
     user: "@user123",
-    followers: 4512,
     subtitle: "Followers",
   },
   {
@@ -23,7 +21,6 @@ export const dashboardData = [
     socialName: "instagram",
     icon: "../../images/icon-instagram.svg",
     user: "@user123",
-    followers: 18744,
     subtitle: "Followers",
   },
   {
@@ -32,7 +29,6 @@ export const dashboardData = [
     socialName: "youtube",
     icon: "../../images/icon-youtube.svg",
     user: "@user123",
-    followers: 6144,
     subtitle: "Followers",
   },
 ];
