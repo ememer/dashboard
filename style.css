@@ -11,6 +11,7 @@
   --youtube: hsl(348, 97%, 39%);
   --social-up: hsl(163, 72%, 41%);
   --social-down: hsl(356, 69%, 56%);
+  --switch-color: hsl(0, 0%, 100%);
 }
 
 body {
@@ -22,6 +23,7 @@ body {
   font-size: 14px;
   font-family: "Inter", sans-serif;
 }
+
 
 header {
   height: 15vh;
@@ -54,12 +56,17 @@ header {
   );
 }
 
-.header-content > div > button > span {
+
+
+.header-content .dot {
   display: inline-block;
   height: 20px;
   width: 20px;
-  background: white;
+  background: var(--switch-color);;
   border-radius: 100%;
+  transform: translateX(0%);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
 }
 
 .header-title {
@@ -111,6 +118,7 @@ header {
   transform: scale(1.05);
   transition-duration: 0.2s;
   transition-timing-function: ease-in;
+  color: var(--light-very-dark-blue-text);
 }
 
 .facebook::after {
@@ -165,12 +173,14 @@ header {
 }
 
 .social-qty {
+  color: var(--light-dark-blue-text);
   margin: 30px auto 0px;
   font-size: 4.5rem;
   font-weight: 700;
 }
 
 .social-subtitle {
+  color: var(--light-dark-blue-text);
   margin: 0px auto;
 }
 
@@ -212,6 +222,7 @@ header {
 .overview-card{
   display: grid;
   grid-template-columns: 3fr 1fr;
+  color: var(--light-dark-blue-text);
   gap: 10px;
   align-items: center;
   background-color: var(--header-light-bg);
@@ -238,4 +249,30 @@ header {
   .section {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* DARKMODE */
+
+body.darkMode {
+
+  --light-bg: hsl(230, 17%, 14%);
+  --light-dark-blue-text:  hsl(228, 34%, 66%);
+  --light-very-dark-blue-text: hsl(0, 0%, 100%);
+  --header-light-bg:  hsl(232, 19%, 15%);
+  --light-toggle-from: hsl(210, 78%, 56%);
+  --light-toggle-to: 	hsl(263, 56%, 50%);
+  --switch-color: hsl(285, 72%, 18%);
+
+}
+
+body.darkMode .dot {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background: var(--switch-color);
+  border-radius: 100%;
+  transform: translateX(115%);
+ transition-duration: 0.2s;
+ transition-timing-function: ease-out;
 }

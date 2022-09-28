@@ -40,7 +40,6 @@ const storeCardsData = (numbersArray) => {
   createSocialCard(dashboardData, socialMediaSection, numbersArray);
 };
 
-
 const SOCIAL_API_URL =
   "http://www.randomnumberapi.com/api/v1.0/randomredditnumber?min=100&max=1000&count=4";
 
@@ -48,7 +47,16 @@ setInterval(() => {
   fetchRndNumbers(SOCIAL_API_URL, "responseValue", 8, 4, storeCardsData);
 }, 4000);
 
+// DarkModeSwitch
 
+const darkModeSwitch = document.querySelector("header button");
+
+darkModeSwitch.addEventListener("click", () => {
+  const body = document.querySelector("body");
+  body.className === "darkMode"
+    ? body.classList.remove("darkMode")
+    : body.classList.add("darkMode");
+});
 //Create overview section title
 
 const overviewTitle = document.createElement("h2");
