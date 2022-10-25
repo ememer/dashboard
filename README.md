@@ -5,6 +5,7 @@
 ## Welcome! 👋
 
 
+
 # Social media dashboard with theme switcher
 
 
@@ -24,13 +25,13 @@ This website is my own project inspired by chellange from FRONTENDMENTOR.IO
 Clone the project
 
 ```bash
-  git clone https://github.com/ememer/demo-portfolio.git
+  git clone https://github.com/ememer/dashboard.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd demo-portfolio
+  cd dashboard
 ```
 
 Install dependencies
